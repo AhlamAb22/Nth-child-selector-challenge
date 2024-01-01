@@ -1,0 +1,149 @@
+/* css reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* end of css reset */
+
+
+:root{
+    --lavender:#E6E6FA;
+    --purple:#483D8B;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lavender);
+}
+
+.container{
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .2rem;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+span{
+    color: var(--purple);
+}
+
+.circle-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.the-circle{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: var(--lavender);
+    transition: background-color .5s ease;
+}
+
+button{
+    background-color: white;
+    border: 1px solid var(--lavender);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: var(--lavender);
+    border: 1px solid var(--purple);
+}
+
+
+.button:first-child:hover ~ .circle-container .the-circle:first-child,
+.button:nth-child(2):hover ~ .circle-container .the-circle:nth-child(2),
+.button:nth-child(3):hover ~ .circle-container .the-circle:nth-child(odd),
+.button:nth-child(4):hover ~ .circle-container .the-circle:nth-child(n+4),
+.button:nth-child(5):hover ~ .circle-container .the-circle:nth-child(3n+1),
+.button:nth-child(6):hover ~ .circle-container .the-circle:last-child,
+.button:nth-child(7):hover ~ .circle-container .the-circle:nth-last-child(2),
+.button:nth-child(8):hover ~ .circle-container .the-circle:nth-child(even),
+.button:nth-child(9):hover ~ .circle-container .the-circle:nth-child(3n-1),
+.button:nth-child(10):hover ~ .circle-container .the-circle:nth-child(4n){
+  background-color: var(--purple);
+}
+
